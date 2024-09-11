@@ -9,3 +9,4 @@ beautifulsoup4
 tqdm
 jupyter
 ipykernel
+lxml
