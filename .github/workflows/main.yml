@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v3  # Updated to v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.12'
 
@@ -25,6 +25,6 @@ jobs:
       with:
         credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}' # Replace with the name of your GitHub Actions secret
 
-    - name: Run your script
+    - name: Run your notebook
       run: |
         jupyter nbconvert --to notebook --execute real-estate-in-nairobi-mombasa-kenya.ipynb --inplace
