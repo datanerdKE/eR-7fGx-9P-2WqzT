@@ -18,7 +18,9 @@ jobs:
         python-version: '3.12'
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: |
+        pip install -r requirements.txt
+        python -m ipykernel install --user --name python3 --display-name "Python 3"  # Ensure the Python 3 kernel is available
 
     - name: Set up Google Cloud credentials
       uses: 'google-github-actions/auth@v2'
