@@ -2,7 +2,7 @@ name: Real Estate Listings in Nairobi & Mombasa
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '0 */4 * * *'  # Runs every 4 hours
 
 jobs:
   get_and_upload_real_estate_data:
