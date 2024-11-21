@@ -1,5 +1,6 @@
 nbconvert
 google-cloud-bigquery
+google-cloud-bigquery-storage
 numpy
 pandas
 requests
