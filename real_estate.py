@@ -22,12 +22,13 @@ sort_orders = [
 ]
 
 selected_order = random.choice(sort_orders)
+print(selected_order)
 
 # Initialize DataFrame outside the loop
 bigdata = pd.DataFrame()
 
 try:
-    for page in trange(1,10):
+    for page in trange(1,50):
         counties = ['nairobi']
         furnished = ['true','false']
         rental_rates = ['day','month','week','year']
@@ -99,11 +100,13 @@ try:
 except Exception as e:
     pass
 
+print(bigdata.shape)
+
 # Initialize DataFrame outside the loop
 bigdata = pd.DataFrame()
 
 try:
-    for page in trange(1,10):
+    for page in trange(1,50):
         counties = ['nairobi']
         
         for county in counties:
@@ -169,6 +172,8 @@ try:
 
 except Exception as e:
     pass
+
+print(bigdata.shape)
 
 # Define SQL Query to Retrieve Real Estate Data from Google Cloud BigQuery
 sql = (
