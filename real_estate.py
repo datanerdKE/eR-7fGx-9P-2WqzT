@@ -16,9 +16,7 @@ client = bigquery.Client()
 sort_orders = [
     'propertytypes=houses,apartments-flats,townhouses',
     'propertytypes=houses,apartments-flats,townhouses&SortOrder=PriceDescending',
-    'propertytypes=houses,apartments-flats,townhouses&SortOrder=AgeAscending',
-    'propertytypes=houses,apartments-flats,townhouses&SortOrder=PropertyType',
-    'propertytypes=houses,apartments-flats,townhouses&SortOrder=SizeAscending'
+    'propertytypes=houses,apartments-flats,townhouses&SortOrder=PropertyType'
 ]
 
 selected_order = random.choice(sort_orders)
