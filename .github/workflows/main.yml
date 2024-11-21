@@ -28,17 +28,3 @@ jobs:
     - name: Run your script
       run: |
         python real_estate.py
-
-    - name: Configure git user
-      run: |
-        git config --global user.name 'datanerdKE'
-        git config --global user.email 'adrianjulius04@gmail.com'
-
-    - name: Commit changes
-      run: |
-        git commit -m "Updated Real Estate Market Data"
-
-    - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
