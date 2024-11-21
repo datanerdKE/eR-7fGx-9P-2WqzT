@@ -1,11 +1,11 @@
-name: Real Estate Listings in Nairobi & Mombasa
+name: Real Estate Market in Nairobi, Kenya.
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Runs every 4 hours
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
 
 jobs:
-  get_and_upload_real_estate_data:
+  get_and_upload_weather_data:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,15 +18,27 @@ jobs:
         python-version: '3.12'
 
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        python -m ipykernel install --user --name python3 --display-name "Python 3"  # Ensure the Python 3 kernel is available
+      run: pip install -r requirements.txt
 
     - name: Set up Google Cloud credentials
       uses: 'google-github-actions/auth@v2'
       with:
         credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}' # Replace with the name of your GitHub Actions secret
 
-    - name: Run your notebook
+    - name: Run your script
       run: |
-        jupyter nbconvert --to notebook --execute real-estate-in-nairobi-mombasa-kenya.ipynb --inplace
+        python real_estate.py
+
+    - name: Configure git user
+      run: |
+        git config --global user.name 'datanerdKE'
+        git config --global user.email 'adrianjulius04@gmail.com'
+
+    - name: Commit changes
+      run: |
+        git commit -m "Updated Real Estate Market Data"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
