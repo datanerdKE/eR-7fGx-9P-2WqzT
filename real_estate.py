@@ -77,9 +77,12 @@ try:
                                     'property_price':[property_price],
                                     'last_scraped':[last_scraped]
                                 })
+                            
+                            print(data.shape)
 
                             # Append data to bigdata DataFrame
                             bigdata = pd.concat([bigdata,data],ignore_index=True)
+                            print(bigdata.shape)
                                 
                         except Exception as e:
                             pass            
@@ -100,10 +103,10 @@ except Exception as e:
 
 print(bigdata.shape)
 
-# Initialize DataFrame outside the loop
-bigdata = pd.DataFrame()
-
 try:
+    # Initialize DataFrame outside the loop
+    bigdata = pd.DataFrame()
+
     for page in trange(1,50):
         counties = ['nairobi']
         
