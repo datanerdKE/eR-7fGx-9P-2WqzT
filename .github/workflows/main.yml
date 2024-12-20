@@ -2,7 +2,7 @@ name: E-Commerce.
 
 on:
   schedule:
-    - cron: '0 0,12 * * *'  # Runs twice a day, at midnight and noon
+    - cron: '0 */4 * * *'  # Runs every 4 hours
 
 jobs:
   get_and_upload_weather_data:
