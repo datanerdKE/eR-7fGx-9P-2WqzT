@@ -1,8 +1,8 @@
-name: Real Estate Market in Nairobi, Kenya.
+name: E-Commerce.
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
+    - cron: '0 0,12 * * *'  # Runs twice a day, at midnight and noon
 
 jobs:
   get_and_upload_weather_data:
@@ -27,4 +27,4 @@ jobs:
 
     - name: Run your script
       run: |
-        python real_estate.py
+        python jumia-scraper-bot.ipynb
