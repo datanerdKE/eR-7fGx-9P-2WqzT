@@ -1,11 +1,11 @@
-name: E-Commerce.
+name: E-Commerce Data Extractor.
 
 on:
   schedule:
     - cron: '*/30 * * * *'  # Runs every 30 minutes
 
 jobs:
-  get_and_upload_weather_data:
+  get_and_upload_jumia_data:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,4 +27,4 @@ jobs:
 
     - name: Run your script
       run: |
-        python jumia-scraper-bot.ipynb
+        jupyter nbconvert --execute --inplace jumia-scraper-bot.ipynb
